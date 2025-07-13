@@ -126,8 +126,7 @@ The models expect loan data with the following key fields:
 - Various borrower and loan characteristics
 
 ### Data Sources
-- LendingClub loan data (2007-2015)
-- Publicly available credit risk datasets
+- LendingClub loan data (2007-2014, 2015)
 
 ## Technical Details
 
@@ -156,16 +155,11 @@ The models expect loan data with the following key fields:
 - Model interpretability considerations
 - Comprehensive documentation
 
-## License
-
-This project is for educational purposes. Please ensure compliance with data usage agreements when using real credit data.
-
 ## Author
 
 **Aktilek Ishanov**
 - Credit Risk Modeling Course Project
 
-
 ---
 
-**Note**: This project is for educational purposes and should not be used for actual credit risk assessment without proper validation and regulatory compliance. 
+**Note**: This project is only for educational purposes. 
