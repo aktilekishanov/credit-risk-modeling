@@ -1,6 +1,7 @@
 # Credit Risk Modeling Course
 
-A comprehensive credit risk modeling project that implements Probability of Default (PD), Loss Given Default (LGD), Exposure at Default (EAD), and Expected Loss (EL) models using machine learning techniques.
+Credit Risk Modeling Project
+Implemented as part of the 365 Careers Data Science Case Study Course on Credit Risk Modeling, this comprehensive project covers the full credit risk modeling pipeline.
 
 ## 📋 Project Overview
 
