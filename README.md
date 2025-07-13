@@ -3,7 +3,7 @@
 Credit Risk Modeling Project
 Implemented as part of the 365 Careers Data Science Case Study Course on Credit Risk Modeling, this comprehensive project covers the full credit risk modeling pipeline. Certificate of successful completion of the course -> [Here](https://drive.google.com/file/d/1FjMDLmfbjUBfmEpRC9NLy3EvwZgU0kw5/view?usp=sharing)
 
-## 📋 Project Overview
+## Project Overview
 
 This project demonstrates the complete credit risk modeling workflow, from data preparation to model deployment and monitoring. It includes:
 
@@ -14,7 +14,7 @@ This project demonstrates the complete credit risk modeling workflow, from data 
 - **Expected Loss Calculation**: Combining PD, LGD, and EAD models
 - **Model Monitoring**: Population Stability Index (PSI) analysis
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```
 credit_risk_modeling_course/
@@ -31,7 +31,7 @@ credit_risk_modeling_course/
 └── from_course/                     # Original course materials with comments
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -67,7 +67,7 @@ Execute the notebooks in the following order:
 3. **03_Monitoring.ipynb** - Monitor model performance and stability
 4. **04_Calculating_Expected_Loss.ipynb** - Build LGD, EAD, and calculate EL
 
-## 📊 Models Overview
+## Models Overview
 
 ### 1. Probability of Default (PD) Model
 - **Algorithm**: Logistic Regression
@@ -91,7 +91,7 @@ Execute the notebooks in the following order:
 - **Formula**: EL = PD × LGD × EAD
 - **Output**: Expected loss amount for each loan
 
-## 📈 Model Performance
+## Model Performance
 
 ### PD Model Metrics
 - **AUROC**: ~0.75
@@ -107,7 +107,7 @@ Execute the notebooks in the following order:
 - **R²**: ~0.30
 - **Correlation**: Moderate correlation with actual CCF
 
-## 🔍 Model Monitoring
+## Model Monitoring
 
 The project includes comprehensive model monitoring using:
 
@@ -115,7 +115,7 @@ The project includes comprehensive model monitoring using:
 - **Feature Stability Analysis**: Monitors individual feature changes
 - **Score Distribution Analysis**: Tracks score stability over time
 
-## 📁 Data Requirements
+## Data Requirements
 
 ### Input Data Format
 The models expect loan data with the following key fields:
@@ -129,7 +129,7 @@ The models expect loan data with the following key fields:
 - LendingClub loan data (2007-2015)
 - Publicly available credit risk datasets
 
-## 🛠️ Technical Details
+## Technical Details
 
 ### Key Libraries Used
 - **pandas**: Data manipulation and analysis
@@ -143,7 +143,7 @@ The models expect loan data with the following key fields:
 - Cross-validation for hyperparameter tuning
 - Out-of-time validation for temporal stability
 
-## 📝 Notes
+## Notes
 
 ### Known Issues
 - Some pandas SettingWithCopyWarning messages (non-critical)
@@ -156,20 +156,15 @@ The models expect loan data with the following key fields:
 - Model interpretability considerations
 - Comprehensive documentation
 
-## 📄 License
+## License
 
 This project is for educational purposes. Please ensure compliance with data usage agreements when using real credit data.
 
-## 👨‍💻 Author
+## Author
 
 **Aktilek Ishanov**
 - Credit Risk Modeling Course Project
 
-## 🙏 Acknowledgments
-
-- Course materials and guidance
-- LendingClub for providing the dataset
-- Open-source community for tools and libraries
 
 ---
 
