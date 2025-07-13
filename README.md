@@ -37,6 +37,8 @@ credit_risk_modeling_course/
 - Python 3.8+
 - Jupyter Notebook or JupyterLab
 - Required Python packages (see requirements.txt)
+- 2007-2014 dataset: https://www.dropbox.com/scl/fi/rzqaawjqwt4qe3rmnnxiw/loan_data_2007_2014.csv?rlkey=a5y6ojznit1ozu8fwt0m7w11w&e=1&dl=0
+- 2015 dataset: https://www.dropbox.com/scl/fi/kywjooafv2jclu6epwe1o/loan_data_2015.csv?rlkey=0d6d9p05dhw2ln8ejacd4mqsp&e=1&dl=0
 
 ### Installation
 
