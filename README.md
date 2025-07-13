@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 3. Download the data files:
    - Place the loan data files in the `data/raw/` directory
-   - The project expects loan data from LendingClub (2007-2015)
+   - The project expects loan data from LendingClub (2007-2014, 2015)
 
 ### Running the Notebooks
 
