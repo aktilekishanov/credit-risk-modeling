@@ -28,7 +28,7 @@ credit_risk_modeling_course/
 │   ├── pd_model_outputs/            # PD model outputs and scorecard
 │   ├── calculating_el_outputs/      # LGD and EAD model outputs
 │   └── monitoring_outputs/          # Monitoring results
-└── from_course/                     # Original course materials with comments
+└── 
 ```
 
 ## Getting Started
