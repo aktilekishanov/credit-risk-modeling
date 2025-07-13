@@ -1,7 +1,7 @@
 # Credit Risk Modeling Course
 
 Credit Risk Modeling Project
-Implemented as part of the 365 Careers Data Science Case Study Course on Credit Risk Modeling, this comprehensive project covers the full credit risk modeling pipeline.
+Implemented as part of the 365 Careers Data Science Case Study Course on Credit Risk Modeling, this comprehensive project covers the full credit risk modeling pipeline. Certificate of successful completion of the course -> [Here](https://drive.google.com/file/d/1FjMDLmfbjUBfmEpRC9NLy3EvwZgU0kw5/view?usp=sharing)
 
 ## 📋 Project Overview
 
