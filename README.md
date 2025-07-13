@@ -45,8 +45,8 @@ credit_risk_modeling_course/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/credit_risk_modeling_course.git
-cd credit_risk_modeling_course
+git clone https://github.com/aktilekishanov/credit_risk_modeling.git
+cd credit_risk_modeling
 ```
 
 2. Install required packages:
@@ -156,14 +156,6 @@ The models expect loan data with the following key fields:
 - Model interpretability considerations
 - Comprehensive documentation
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
 ## 📄 License
 
 This project is for educational purposes. Please ensure compliance with data usage agreements when using real credit data.
@@ -172,7 +164,6 @@ This project is for educational purposes. Please ensure compliance with data usa
 
 **Aktilek Ishanov**
 - Credit Risk Modeling Course Project
-- EY Internship
 
 ## 🙏 Acknowledgments
 
