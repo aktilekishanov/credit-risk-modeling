@@ -1,165 +1,105 @@
-# Credit Risk Modeling Course
+# Credit Risk Modeling Pipeline
 
-Credit Risk Modeling Project
-Implemented as part of the 365 Careers Data Science Case Study Course on Credit Risk Modeling, this comprehensive project covers the full credit risk modeling pipeline. Certificate of successful completion of the course -> [Here](https://drive.google.com/file/d/1FjMDLmfbjUBfmEpRC9NLy3EvwZgU0kw5/view?usp=sharing)
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange.svg)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-ML-orange.svg)
+![Pandas](https://img.shields.io/badge/Pandas-Data_Analysis-blue.svg)
+![Certificate](https://img.shields.io/badge/Certificate-Completed-green.svg)
 
-## Project Overview
+A comprehensive, end-to-end credit risk modeling enterprise solution. This project implements the full banking credit risk lifecycle — from raw data ingestion and feature engineering to probability of default (PD) modeling, loss estimation, and automated population stability monitoring.
 
-This project demonstrates the complete credit risk modeling workflow, from data preparation to model deployment and monitoring. It includes:
+Implemented as part of the 365 Careers Data Science Case Study.
 
-- **Data Preparation**: Feature engineering, missing value handling, and data preprocessing
-- **PD Model**: Probability of Default prediction using logistic regression
-- **LGD Model**: Two-stage Loss Given Default model (logistic + linear regression)
-- **EAD Model**: Exposure at Default prediction using linear regression
-- **Expected Loss Calculation**: Combining PD, LGD, and EAD models
-- **Model Monitoring**: Population Stability Index (PSI) analysis
+[📜 View Completion Certificate](https://drive.google.com/file/d/1FjMDLmfbjUBfmEpRC9NLy3EvwZgU0kw5/view?usp=sharing)
+
+## Features
+
+- **End-to-End Pipeline** — Seamless transition from raw LendingClub data to Expected Loss (EL) calculations.
+- **Advanced Feature Engineering** — Sophisticated Weight of Evidence (WoE) and Information Value (IV) calculations for fine-classing and coarse-classing.
+- **PD/LGD/EAD Modeling** — Implementation of Probability of Default (Logistic), Loss Given Default (Two-stage), and Exposure at Default (Linear) models.
+- **Model Monitoring & Stability** — Automated Population Stability Index (PSI) analysis to detect distribution shifts in real-time.
+- **Regulatory-Ready Scoring** — Scorecard creation with point-to-odds scaling and credit scoring logic.
+
+## Architecture
+
+The project is structured into four sequential modules that form a robust risk estimation engine:
+
+```mermaid
+graph TD
+    A["01 Data Preparation"] -- "Preprocessed Data" --> B["02 PD Model"]
+    B -- "Model Artifacts" --> C["03 Monitoring"]
+    B -- "Scorecard/Probabilities" --> D["04 Expected Loss"]
+    
+    subgraph "Outputs"
+        C["PSI & Stability Reports"]
+        D["EL = PD × LGD × EAD"]
+    end
+```
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| **Programming** | Python 3.8+ |
+| **Analysis** | Pandas, NumPy, Scipy |
+| **Modeling** | Scikit-Learn, Statsmodels |
+| **Visualization** | Matplotlib, Seaborn |
+| **Serialization** | Pickle / Joblib (.sav) |
 
 ## Project Structure
 
 ```
-credit_risk_modeling_course/
-├── 01_Data_Preparation.ipynb          # Data preprocessing and feature engineering
-├── 02_PD_Model.ipynb                  # Probability of Default model
-├── 03_Monitoring.ipynb                # Model monitoring and PSI analysis
-├── 04_Calculating_Expected_Loss.ipynb # LGD, EAD, and Expected Loss models
-├── data/
-│   ├── raw/                          # Original loan data files
-│   ├── processed/                    # Preprocessed data files
-│   ├── pd_model_outputs/            # PD model outputs and scorecard
-│   ├── calculating_el_outputs/      # LGD and EAD model outputs
-│   └── monitoring_outputs/          # Monitoring results
-└── 
+credit-risk-modeling/
+├── 01_Data_Preparation.ipynb          # Data cleaning, WoE/IV engineering
+├── 02_PD_Model.ipynb                  # Probability of Default development
+├── 03_Monitoring.ipynb                # PSI and feature stability analysis
+├── 04_Calculating_Expected_Loss.ipynb # LGD, EAD, and EL integration
+├── data/                              # Data file directory (see data/README.md)
+│   ├── raw/                           # Input CSVs (gitignored)
+│   └── processed/                     # Intermediate artifacts
+├── requirements.txt                   # Dependency list
+└── README.md                          # Main documentation
 ```
 
 ## Getting Started
 
-### Prerequisites
-
+### 1. Prerequisites
 - Python 3.8+
-- Jupyter Notebook or JupyterLab
-- Required Python packages (see requirements.txt)
-- 2007-2014 dataset: https://www.dropbox.com/scl/fi/rzqaawjqwt4qe3rmnnxiw/loan_data_2007_2014.csv?rlkey=a5y6ojznit1ozu8fwt0m7w11w&e=1&dl=0
-- 2015 dataset: https://www.dropbox.com/scl/fi/kywjooafv2jclu6epwe1o/loan_data_2015.csv?rlkey=0d6d9p05dhw2ln8ejacd4mqsp&e=1&dl=0
+- Jupyter Notebook or Lab
 
-### Installation
-
-1. Clone the repository:
+### 2. Installation
 ```bash
-git clone https://github.com/aktilekishanov/credit_risk_modeling.git
-cd credit_risk_modeling
-```
-
-2. Install required packages:
-```bash
+git clone https://github.com/aktilekishanov/credit-risk-modeling.git
+cd credit-risk-modeling
 pip install -r requirements.txt
 ```
 
-3. Download the data files:
-   - Place the loan data files in the `data/raw/` directory
-   - The project expects loan data from LendingClub (2007-2014, 2015)
+### 3. Data Setup
+Large datasets are gitignored. Download them from the following sources and place them in `data/raw/`:
+- [LendingClub 2007-2014](https://www.dropbox.com/scl/fi/rzqaawjqwt4qe3rmnnxiw/loan_data_2007_2014.csv?rlkey=a5y6ojznit1ozu8fwt0m7w11w&e=1&dl=0)
+- [LendingClub 2015](https://www.dropbox.com/scl/fi/kywjooafv2jclu6epwe1o/loan_data_2015.csv?rlkey=0d6d9p05dhw2ln8ejacd4mqsp&e=1&dl=0)
 
-### Running the Notebooks
+## Execution Order
 
-Execute the notebooks in the following order:
+To reproduce the results, execute the notebooks in this specific order:
 
-1. **01_Data_Preparation.ipynb** - Prepare and preprocess the data
-2. **02_PD_Model.ipynb** - Build and validate the PD model
-3. **03_Monitoring.ipynb** - Monitor model performance and stability
-4. **04_Calculating_Expected_Loss.ipynb** - Build LGD, EAD, and calculate EL
+1.  **`01_Data_Preparation.ipynb`**: Cleans the raw CSVs and applies feature transformations.
+2.  **`02_PD_Model.ipynb`**: Trains the logistic regression model and validates with AUROC (~0.75).
+3.  **`03_Monitoring.ipynb`**: Compares 2007-2014 data against 2015 data using PSI.
+4.  **`04_Calculating_Expected_Loss.ipynb`**: Integrates LGD and EAD components to calculate final dollar-value Expected Loss.
 
-## Models Overview
+## Model Performance Summary
 
-### 1. Probability of Default (PD) Model
-- **Algorithm**: Logistic Regression
-- **Features**: 85 engineered features including:
-  - Loan characteristics (grade, term, purpose)
-  - Borrower information (income, employment, credit history)
-  - Geographic and demographic factors
-- **Output**: Probability of default for each loan
-
-### 2. Loss Given Default (LGD) Model
-- **Stage 1**: Logistic Regression (recovery rate > 0 vs = 0)
-- **Stage 2**: Linear Regression (actual recovery rate for positive recoveries)
-- **Output**: Expected recovery rate (1 - LGD)
-
-### 3. Exposure at Default (EAD) Model
-- **Algorithm**: Linear Regression
-- **Target**: Credit Conversion Factor (CCF)
-- **Output**: Expected exposure at default
-
-### 4. Expected Loss (EL) Calculation
-- **Formula**: EL = PD × LGD × EAD
-- **Output**: Expected loss amount for each loan
-
-## Model Performance
-
-### PD Model Metrics
-- **AUROC**: ~0.75
-- **Accuracy**: ~85%
-- **Confusion Matrix**: Balanced performance across classes
-
-### LGD Model Performance
-- **Stage 1 AUROC**: ~0.70
-- **Stage 2 R²**: ~0.25
-- **Combined Performance**: Realistic recovery rate predictions
-
-### EAD Model Performance
-- **R²**: ~0.30
-- **Correlation**: Moderate correlation with actual CCF
-
-## Model Monitoring
-
-The project includes comprehensive model monitoring using:
-
-- **Population Stability Index (PSI)**: Detects distribution shifts
-- **Feature Stability Analysis**: Monitors individual feature changes
-- **Score Distribution Analysis**: Tracks score stability over time
-
-## Data Requirements
-
-### Input Data Format
-The models expect loan data with the following key fields:
-- `loan_status`: Target variable (default/non-default)
-- `funded_amnt`: Original loan amount
-- `total_rec_prncp`: Total principal received
-- `recoveries`: Recovery amounts
-- Various borrower and loan characteristics
-
-### Data Sources
-- LendingClub loan data (2007-2014, 2015)
-
-## Technical Details
-
-### Key Libraries Used
-- **pandas**: Data manipulation and analysis
-- **numpy**: Numerical computations
-- **scikit-learn**: Machine learning models
-- **matplotlib/seaborn**: Data visualization
-- **statsmodels**: Statistical modeling
-
-### Model Validation
-- Train/Test split (80/20)
-- Cross-validation for hyperparameter tuning
-- Out-of-time validation for temporal stability
-
-## Notes
-
-### Known Issues
-- Some pandas SettingWithCopyWarning messages (non-critical)
-- Large data files excluded from repository (see .gitignore)
-- Model files (.sav) excluded due to size
-
-### Best Practices Implemented
-- Proper train/test splitting
-- Feature engineering with domain knowledge
-- Model interpretability considerations
-- Comprehensive documentation
+| Model | Primary Metric | Result |
+|---|---|---|
+| **PD Model** | AUROC | ~0.75 |
+| **PD Model** | Accuracy | ~85% |
+| **LGD Stage 1** | AUROC | ~0.70 |
+| **EAD Model** | R² | ~0.30 |
 
 ## Author
 
 **Aktilek Ishanov**
-- Credit Risk Modeling Course Project
 
 ---
-
-**Note**: This project is only for educational purposes. 
+*Note: This project is for educational purposes as part of a comprehensive case study.*
